@@ -1,10 +1,8 @@
-# Examenopdracht Front-end Web Development / Web Services
+# Examenopdracht Front-end Web Development
 
-> Schrap hierboven wat niet past
-
-- Student: VOORNAAM NAAM
-- Studentennummer: xxxxxxxxx
-- E-mailadres: voornaam.naam@student.hogent.be
+- Student: Jasper Berton
+- Studentennummer: 2020474759
+- E-mailadres: jasper.berton@student.hogent.be
 
 ## Vereisten
 
