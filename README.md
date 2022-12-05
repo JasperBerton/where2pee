@@ -1,7 +1,7 @@
 # Examenopdracht Front-end Web Development
 
 - Student: Jasper Berton
-- Studentennummer: 2020474759
+- Studentennummer: 202074759
 - E-mailadres: jasper.berton@student.hogent.be
 
 ## Vereisten
