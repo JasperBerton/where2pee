@@ -2,12 +2,27 @@ import {useState, useMemo, useCallback, useEffect, useContext} from 'react';
 import * as GentApi from '../api/gentdata'
 
 export default function GentData(){
-  useEffect(() =>{
-    const fetchPisGent = async()=>{
+  const [gent, setGent] = useState([]);
+  const[error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  const refreshGentLocations =useCallback(async() => {
+    try{
+      setLoading(true);
+      setError(null);
       const data = await GentApi.getAll();
-      console.log(data);
-    };
+      setGent(data);
+      
+    } catch(error){
+      setError(error);
+      console.error(error);
+    } finally{
+      setLoading(false);
+    }
+  },[])
 
-    fetchPisGent();
-  })
-}
+  useEffect(() =>{
+    refreshGentLocations();
+    },[refreshGentLocations]);
+    
+  }
