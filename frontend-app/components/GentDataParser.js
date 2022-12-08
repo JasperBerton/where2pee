@@ -8,10 +8,12 @@ export default function GentData(){
   
   const refreshGentLocations =useCallback(async() => {
     try{
+      setGent([]);
       setLoading(true);
       setError(null);
       const data = await GentApi.getAll();
-      setGent(data);
+      setGent(gent.push(data.records));
+      console.log(gent);
       
     } catch(error){
       setError(error);

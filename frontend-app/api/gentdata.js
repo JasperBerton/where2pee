@@ -4,5 +4,5 @@ const baseUrl = 'https://data.stad.gent/api/records/1.0/search/?dataset=publiek-
 
 export const getAll = async()=>{
   const response = await axios.get(baseUrl);
-  console.log(response.data.records);
+  return response.data;
 }
