@@ -1,5 +1,5 @@
 import {useState, useMemo, useCallback, useEffect, useContext} from 'react';
-import * as GentApi from '../api/gentdata'
+import * as GentApi from './api/gentdata'
 
 export default function GentData(){
   const [gent, setGent] = useState([]);
