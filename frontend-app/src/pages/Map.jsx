@@ -4,6 +4,7 @@ import { TileLayer } from 'react-leaflet/TileLayer'
 import { useMap } from 'react-leaflet/hooks'
 import { Marker, Popup, useMapEvents } from "react-leaflet"
 import { useState } from "react"
+import GentData from "../components/GentDataParser"
 
 export default function Map(){
   function LocationMarker() {
@@ -37,6 +38,7 @@ return <div>
       A pretty CSS3 popup. <br /> Easily customizable.
     </Popup>
   </Marker>
+  <GentData/>
   <LocationMarker/>
 </MapContainer>
 </div>

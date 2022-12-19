@@ -1,5 +1,7 @@
 import {useState, useMemo, useCallback, useEffect, useContext} from 'react';
-import * as GentApi from './api/gentdata'
+import * as GentApi from '../api/gentdata'
+import GentToilet from './GentToilet'
+import * as MockData from '../api/mockdata'
 
 export default function GentData(){
   const [gent, setGent] = useState([]);
@@ -11,20 +13,31 @@ export default function GentData(){
       setGent([]);
       setLoading(true);
       setError(null);
-      const data = await GentApi.getAll();
+      const data = MockData.gentData;
       setGent(gent.push(data.records));
-      console.log(gent);
+      console.log(gent)
       
-    } catch(error){
-      setError(error);
+    } catch(err){
+      setError(err);
       console.error(error);
     } finally{
       setLoading(false);
     }
-  },[])
+  },[]);
 
   useEffect(() =>{
     refreshGentLocations();
     },[refreshGentLocations]);
+  
+    const mocker = MockData.gentData.records;
+
+  return(
+    <>
+      {mocker.map(g => (
+          <GentToilet {...g}></GentToilet>
+      ))}
+    </>
+  )
+  
     
   }
