@@ -4,7 +4,7 @@ import Map from './pages/Map'
 import {About} from './pages/About'
 import {NotFound} from './pages/NotFound'
 import  ToiletDetail from './pages/ToiletDetail';
-import { ToiletForm } from './pages/ToiletForm';
+import ToiletForm from './pages/ToiletForm';
 import AuthLanding from './components/AuthLanding';
 import Navigation from './components/Navigation';
 
