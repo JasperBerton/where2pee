@@ -1,4 +1,3 @@
-import Navigation from "../components/Navigation"
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
 import { useMap } from 'react-leaflet/hooks'
@@ -26,7 +25,6 @@ export default function Map(){
     )
   }
 return <div>
-    <Navigation/>
     <h1>Toiletten</h1>
     <MapContainer center={[51.0543422, 3.7174243]} zoom={13} scrollWheelZoom={false} id="map">
   <TileLayer

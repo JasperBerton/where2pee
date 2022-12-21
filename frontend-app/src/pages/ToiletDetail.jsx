@@ -1,7 +1,6 @@
 import {memo, useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import Navigation from "../components/Navigation";
 import * as GentApi from '../api/gentdata';
 
 function ToiletDetail()
@@ -25,7 +24,6 @@ function ToiletDetail()
   
   return (
     <>
-      <Navigation/>
       <h1>Toilet detail</h1>
       <p>{toilet.status}</p>
       <p>Adres: {toilet.adres}</p>
