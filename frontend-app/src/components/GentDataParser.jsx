@@ -26,14 +26,27 @@ export default function GentData(){
   },[]);
 
   useEffect(() =>{
-    refreshGentLocations();
-    },[refreshGentLocations]);
+    const fetchGent = async() => {
+      try{
+        setLoading(true);
+        setError(null);
+        const data = await GentApi.getAll();
+        setGent(data.records);
+      } catch(err){
+        setError(err.message || "Failed to load Gent data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGent();
+    },[]);
   
     const mocker = MockData.gentData.records;
 
   return(
     <>
-      {mocker.map(g => (
+      {gent.map(g => (
           <GentToilet {...g}></GentToilet>
       ))}
     </>

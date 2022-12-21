@@ -9,7 +9,7 @@ const gentData = {
   },
   records:[
   {
-  datasetid:"publiek-sanitair-gent",
+  "datasetid":"publiek-sanitair-gent",
   "recordid":"569c3b57696abaca6fe57669892bd3e15df8ab4e",
   "fields":{
   "toiletten":0,
