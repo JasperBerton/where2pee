@@ -6,3 +6,8 @@ export const getAll = async()=>{
   const response = await axios.get(baseUrl);
   return response.data;
 }
+
+export const getById = async(id)=>{
+  const response = await axios.get(`${baseUrl}&refine.recordid=${id}`)
+  return response.data.records;
+}
