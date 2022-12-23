@@ -8,14 +8,14 @@ import {getFirestore, collection, getDocs, addDoc} from 'firebase/firestore/lite
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC3Uq-sCHvkfVPWiMDBNgHddtCUb7VLCs4",
-  authDomain: "complaintsw2p.firebaseapp.com",
-  databaseURL: "https://complaintsw2p-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "complaintsw2p",
-  storageBucket: "complaintsw2p.appspot.com",
-  messagingSenderId: "287022381092",
-  appId: "1:287022381092:web:f7c34b8b9283512e5c00b1",
-  measurementId: "G-6ZGHG2SB3Y"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGESENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 };
 
 // Initialize Firebase

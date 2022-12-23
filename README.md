@@ -18,6 +18,8 @@ Ik verwacht dat volgende software reeds geïnstalleerd is:
 ## Opstarten
 
 > Schrijf hier hoe we de applicatie starten (.env bestanden aanmaken, commando's om uit te voeren...)
+.env bestand toevoegen met volgende informatie:
+
 
 
 ## Testen
