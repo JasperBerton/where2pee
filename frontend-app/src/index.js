@@ -12,8 +12,8 @@ const onRedirectCallback = (appState) => {
   );
 };
 const providerConfig = {
-  domain: "dev-rvdcsc46oy0hlxea.eu.auth0.com",
-  clientId: "VqaoP98wQ3Gxd3x3i8EmhFslAoW6bXS1",
+  domain: process.env.REACT_APP_AUTH0_DOMAIN,
+  clientId: process.env.REACT_APP_AUTH0_CLIENT,
   redirectUri: window.location.origin,
   onRedirectCallback,
 };
