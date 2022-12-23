@@ -13,11 +13,10 @@ Ik verwacht dat volgende software reeds geïnstalleerd is:
 - [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
 - ...
 
-> Vul eventueel aan
+
 
 ## Opstarten
 
-> Schrijf hier hoe we de applicatie starten (.env bestanden aanmaken, commando's om uit te voeren...)
 .env bestand toevoegen met volgende informatie:
 REACT_APP_AUTH0_DOMAIN="dev-rvdcsc46oy0hlxea.eu.auth0.com"
 REACT_APP_AUTH0_CLIENT="VqaoP98wQ3Gxd3x3i8EmhFslAoW6bXS1"
@@ -39,7 +38,5 @@ wachtwoord: Admin-123
 
 
 ## Testen
-
-> Schrijf hier hoe we de testen uitvoeren (.env bestanden aanmaken, commando's om uit te voeren...)
 
 npx cypress open en daar zijn de testen dan te zien onder e2e testen.
