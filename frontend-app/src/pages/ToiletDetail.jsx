@@ -28,9 +28,9 @@ function ToiletDetail()
       <p>{toilet.status}</p>
       <p>Adres: {toilet.adres}</p>
       <p>Beschrijving: {toilet.beschrijving}</p>
-      <p>Urinoirs: {toilet.urinoirs == 0 || toilet.urinoirs == null? "Geen aanwezig":toilet.urinoirs}</p>
+      <p data-cy="urinoirs">Urinoirs: {toilet.urinoirs == 0 || toilet.urinoirs == null? "Geen aanwezig":toilet.urinoirs}</p>
       <p>Toiletten: {toilet.toiletten == 0 || toilet.toiletten == null? "Geen aanwezig":toilet.toiletten}</p>
-      <p>Luiertafels: {toilet.luiertafels == 0 || toilet.luiertafels == null? "Geen aanwezig":toilet.luiertafels}</p>
+      <p data-cy="luiertafels">Luiertafels: {toilet.luiertafels == 0 || toilet.luiertafels == null? "Geen aanwezig":toilet.luiertafels}</p>
       <Link to={`/toilet/error/${id}`}>
         <button>Meld een probleem</button>
       </Link>

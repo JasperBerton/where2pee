@@ -1,4 +1,4 @@
-import {useState, useMemo, useCallback, useEffect, useContext} from 'react';
+import {useState,useEffect} from 'react';
 import * as GentApi from '../api/gentdata'
 import GentToilet from './GentToilet'
 import * as MockData from '../api/mockdata'
@@ -14,6 +14,7 @@ export default function GentData(){
         setLoading(true);
         setError(null);
         const data = await GentApi.getAll();
+        console.log(data.records)
         setGent(data.records);
       } catch(err){
         setError(err.message || "Failed to load Gent data");

@@ -7,7 +7,7 @@ import  ToiletDetail from './pages/ToiletDetail';
 import ToiletForm from './pages/ToiletForm';
 import Navigation from './components/Navigation';
 import RequireAuth from './components/RequireAuth';
-import { AdminPage } from './pages/AdminPage';
+import AdminPage from './pages/AdminPage';
 
 function App() {
   return (

@@ -1,6 +1,10 @@
-export const AdminPage = () => (
-  <div>
-    <h1>Wie ben ik?</h1>
-    <p>Mijn naam is Jasper Berton een 3de jaarsstudent Toegepaste Informatica doorstroming Development.</p>
-  </div>
-)
+import KlachtList from "../components/KlachtList"
+
+export default function AdminPage(){
+  return (
+    <>
+    <h1>Lijst van Klachten</h1>
+    <KlachtList></KlachtList>
+  </>
+  )
+}
