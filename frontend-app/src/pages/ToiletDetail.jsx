@@ -24,15 +24,15 @@ function ToiletDetail()
   
   return (
     <>
-      <h1>Toilet detail</h1>
-      <p>{toilet.status}</p>
-      <p>Adres: {toilet.adres}</p>
-      <p>Beschrijving: {toilet.beschrijving}</p>
-      <p data-cy="urinoirs">Urinoirs: {toilet.urinoirs == 0 || toilet.urinoirs == null? "Geen aanwezig":toilet.urinoirs}</p>
-      <p>Toiletten: {toilet.toiletten == 0 || toilet.toiletten == null? "Geen aanwezig":toilet.toiletten}</p>
-      <p data-cy="luiertafels">Luiertafels: {toilet.luiertafels == 0 || toilet.luiertafels == null? "Geen aanwezig":toilet.luiertafels}</p>
+      <h1 className="ms-2">Toilet detail</h1>
+      <p className="ms-4">{toilet.status}</p>
+      <p className="ms-4">Adres: {toilet.adres}</p>
+      <p className="ms-4">Beschrijving: {toilet.beschrijving}</p>
+      <p data-cy="urinoirs" className="ms-4">Urinoirs: {toilet.urinoirs == 0 || toilet.urinoirs == null? "Geen aanwezig":toilet.urinoirs}</p>
+      <p className="ms-4">Toiletten: {toilet.toiletten == 0 || toilet.toiletten == null? "Geen aanwezig":toilet.toiletten}</p>
+      <p data-cy="luiertafels" className="ms-4">Luiertafels: {toilet.luiertafels == 0 || toilet.luiertafels == null? "Geen aanwezig":toilet.luiertafels}</p>
       <Link to={`/toilet/error/${id}`}>
-        <button>Meld een probleem</button>
+        <button className="btn btn-danger ms-4">Meld een probleem</button>
       </Link>
     </>
   );

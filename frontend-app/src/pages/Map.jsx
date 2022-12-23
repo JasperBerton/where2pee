@@ -25,7 +25,7 @@ export default function Map(){
     )
   }
 return <div>
-    <h1>Toiletten</h1>
+    <h1 className='ms-4 md-4'>Toiletten</h1>
     <MapContainer center={[51.0543422, 3.7174243]} zoom={13} scrollWheelZoom={false} id="map">
   <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

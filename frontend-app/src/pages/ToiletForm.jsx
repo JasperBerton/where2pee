@@ -61,7 +61,7 @@ function TextAreaInput({
   const hasError = name in errors;
 
   return (
-    <div className="mb-3">
+    <div className="mb-4">
       <label htmlFor={name} className="form-label">
         {label}
       </label>
@@ -105,7 +105,7 @@ function ToiletForm(){
   }
   return(
   <div>
-    <h1>Klaag hier over stinkende wc's</h1>
+    <h1 className='ms-4'>Inzending klacht sanitair</h1>
     <FormProvider
     handleSubmit={handleSubmit}
     errors={errors}

@@ -11,7 +11,7 @@ function GentToilet({
         <p>{fields.adres}</p>
         <p>{fields.status}</p>
         <Link to={`toilet/${recordid}`}>
-          <button>Info</button>
+          <button className="btn btn-success">Info</button>
         </Link>
       </Popup>
     </Marker>
