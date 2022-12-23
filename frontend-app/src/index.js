@@ -6,14 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
+const onRedirectCallback = (appState) => {
+  history.push(
+    appState && appState.returnTo ? appState.returnTo : window.location.pathname
+  );
+};
+const providerConfig = {
+  domain: "dev-rvdcsc46oy0hlxea.eu.auth0.com",
+  clientId: "VqaoP98wQ3Gxd3x3i8EmhFslAoW6bXS1",
+  redirectUri: window.location.origin,
+  onRedirectCallback,
+};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Auth0Provider
-    domain="dev-rvdcsc46oy0hlxea.eu.auth0.com"
-    clientId="VqaoP98wQ3Gxd3x3i8EmhFslAoW6bXS1"
-    redirectUri={`${window.location.origin}/login`}
-    cacheLocation="localstorage"
+    {...providerConfig}
     >
       <BrowserRouter>
         <App />

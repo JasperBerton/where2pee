@@ -5,8 +5,9 @@ import {About} from './pages/About'
 import {NotFound} from './pages/NotFound'
 import  ToiletDetail from './pages/ToiletDetail';
 import ToiletForm from './pages/ToiletForm';
-import AuthLanding from './components/AuthLanding';
 import Navigation from './components/Navigation';
+import RequireAuth from './components/RequireAuth';
+import { AdminPage } from './pages/AdminPage';
 
 function App() {
   return (
@@ -15,10 +16,14 @@ function App() {
     <Routes>
       <Route index element={<Map/>}/>
       <Route path='about' element={<About/>}/>
-      <Route path="*" element={<NotFound/>}/>
       <Route path="/toilet/:id" element={<ToiletDetail/>}></Route>
       <Route path="/toilet/error/:id" element={<ToiletForm/>}></Route>
-      <Route path="/login" element={<AuthLanding />} />
+      <Route path="/admin" element={
+        <RequireAuth>
+          <AdminPage/>
+        </RequireAuth>
+      }/>
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
     </>
   );

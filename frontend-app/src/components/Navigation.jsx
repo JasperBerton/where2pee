@@ -21,6 +21,9 @@ export default function Navigation()
             <li className="nav-item">
               <Link to="/about" className="nav-link">Over</Link>
             </li>
+            {isAuthenticated? <li className='nav-item'>
+              <Link to="/admin" className='nav-link'>Admin</Link>
+            </li>: null}
           </ul>
           <ul>
             <li className='navbar-right btn-nav'>
