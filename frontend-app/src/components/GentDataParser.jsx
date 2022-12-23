@@ -30,7 +30,7 @@ export default function GentData(){
   return(
     <>
       {gent.map(g => (
-          <GentToilet {...g}></GentToilet>
+          <GentToilet key={g.recordid}{...g}></GentToilet>
       ))}
     </>
   )
