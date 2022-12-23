@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getFirestore, collection, getDocs} from 'firebase/firestore/lite'
+import {getFirestore, collection, getDocs, addDoc} from 'firebase/firestore/lite'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,5 +29,17 @@ export async function getComplaints()
   const complaintsSnapshot = await getDocs(complaintsCol);
   const complaintsList = complaintsSnapshot.docs.map(doc => doc.data());
   return complaintsList;
+}
+
+export async function addComplaint({toilet,complaint,email}){
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const collectionRef = collection(db,"complaints")
+  const payload = {
+    complaint,
+    email,
+    toilet
+  };
+  await addDoc(collectionRef, payload);
 }
 

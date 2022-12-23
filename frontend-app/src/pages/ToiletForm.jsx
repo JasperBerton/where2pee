@@ -1,6 +1,7 @@
 import {useForm, FormProvider, useFormContext} from 'react-hook-form';
 import {memo, useState} from 'react';
 import { useNavigate } from 'react-router';
+import * as firebase from '../api/firebase';
 
 const validationRules = {
   toilet: {
@@ -92,8 +93,15 @@ function ToiletForm(){
   const navigate = useNavigate();
   const onSubmit = async(data) => 
   {
-    console.log(data);
-    navigate('/');
+    const {toilet,email,complaint} = data;
+    try{
+      setError(null)
+      await firebase.addComplaint({toilet,complaint, email})
+      navigate('/')
+    } catch(err){
+      setError(err)
+      console.log(err)
+    }
   }
   return(
   <div>
@@ -113,9 +121,10 @@ function ToiletForm(){
         label="Email:"
         name="email"
         type="email"/>
-        <TextAreaInput
+        <LabelInput
         label="Klacht:"
-        name="klacht"/>
+        name="complaint"
+        type="text"/>
         <div className='clearfix'>
           <div className='btn-group float-end'>
             <button
