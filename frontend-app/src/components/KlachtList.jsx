@@ -11,19 +11,21 @@ export default function KlachtList(){
     const fetchComplaints = async() => {
       try{
         setLoading(true);
+        console.log(loading);
         setError(null);
         const data = await firebase.getComplaints();
         console.log(data);
         setComplaints(data);
       } catch(err){
         setError(err.message || "Failed to load Complaints data");
+        console.log(error)
       } finally {
         setLoading(false);
       }
     };
 
     fetchComplaints();
-    },[]); 
+    },[loading,error]); 
   
   return (
     <div className='table-responsive'>

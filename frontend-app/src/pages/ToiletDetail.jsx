@@ -20,7 +20,7 @@ function ToiletDetail()
       }
     };
     fetchToilet();
-  },[id]);
+  },[id,error]);
   
   return (
     <>
