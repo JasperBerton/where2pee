@@ -6,16 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-const onRedirectCallback = (appState) => {
-  history.push(
-    appState && appState.returnTo ? appState.returnTo : window.location.pathname
-  );
-};
+// const onRedirectCallback = (appState) => {
+//   history.push(
+//     appState && appState.returnTo ? appState.returnTo : window.location.pathname
+//   );
+// };
 const providerConfig = {
   domain: process.env.REACT_APP_AUTH0_DOMAIN,
   clientId: process.env.REACT_APP_AUTH0_CLIENT,
   redirectUri: window.location.origin,
-  onRedirectCallback,
+  // onRedirectCallback,
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
