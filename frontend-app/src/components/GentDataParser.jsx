@@ -1,7 +1,6 @@
 import {useState,useEffect} from 'react';
 import * as GentApi from '../api/gentdata'
 import GentToilet from './GentToilet'
-import * as MockData from '../api/mockdata'
 
 export default function GentData(){
   const [gent, setGent] = useState([]);
@@ -12,12 +11,14 @@ export default function GentData(){
     const fetchGent = async() => {
       try{
         setLoading(true);
+        console.log(loading);
         setError(null);
         const data = await GentApi.getAll();
         console.log(data.records)
         setGent(data.records);
       } catch(err){
         setError(err.message || "Failed to load Gent data");
+        console.log(error);
       } finally {
         setLoading(false);
       }
@@ -25,8 +26,6 @@ export default function GentData(){
 
     fetchGent();
     },[]);
-  
-    const mocker = MockData.gentData.records;
 
   return(
     <>

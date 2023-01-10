@@ -50,44 +50,11 @@ function LabelInput({
   );
 }
 
-function TextAreaInput({
-  label, name, type, ...rest
-}) {
-  const {
-    register,
-    errors, isSubmitting,
-  } = useFormContext();
-
-  const hasError = name in errors;
-
-  return (
-    <div className="mb-4">
-      <label htmlFor={name} className="form-label">
-        {label}
-      </label>
-      <textarea
-        {...register(name, validationRules[name])}
-        id={name}
-        className="form-control"
-        disabled={isSubmitting}
-        {...rest}
-      />
-      {hasError ? (
-        <div className="form-text text-danger" data-cy="labelinput-error">
-          {errors[name].message}
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
 function ToiletForm(){
   const [error,  setError] = useState(null);
   const{
-    setValue,
     register,
     handleSubmit,
-    reset,
     formState: {errors, isSubmitting}
   } = useForm();
   const navigate = useNavigate();
@@ -100,7 +67,7 @@ function ToiletForm(){
       navigate('/')
     } catch(err){
       setError(err)
-      console.log(err)
+      console.log(error);
     }
   }
   return(
