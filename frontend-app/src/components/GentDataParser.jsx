@@ -8,12 +8,10 @@ export default function GentData(){
   const [gent, setGent] = useState([]);
   const [brussel, setBrussel] = useState([]);
   const[error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() =>{
     const fetchGent = async() => {
       try{
-        setLoading(true);
         setError(null);
         const GentData = await GentApi.getAll();
         const BrusselData = await BrusselApi.getAll();
@@ -23,13 +21,11 @@ export default function GentData(){
       } catch(err){
         setError(err.message || "Failed to load Gent data");
         console.log(error);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchGent();
-    },[]);
+    },[error]);
 
   return(
     <>
