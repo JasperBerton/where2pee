@@ -2,16 +2,21 @@ import {memo, useEffect, useState} from "react";
 import { useParams} from "react-router";
 import { Link } from "react-router-dom";
 import * as GentApi from '../api/gentdata';
+import * as BrusselApi from '../api/brusseldata';
 
 function ToiletDetail()
 {
   const [toilet, setToilet] = useState([]);
   const [error, setError] = useState(null);
-  const {id} = useParams();
+  const {id, city} = useParams();
   useEffect(()=>{
     const fetchToilet = async()=>{
       try{
-        const data = await GentApi.getById(id);
+        var data = null;
+        if(city === "Gent")
+          data = await GentApi.getById(id);
+        if(city === "Brussel")
+          data = await BrusselApi.getById(id);
         console.log(data[0].fields);
         setToilet(data[0].fields);
       }catch(err){
@@ -20,11 +25,12 @@ function ToiletDetail()
       }
     };
     fetchToilet();
-  },[id,error]);
+  },[id,error,city]);
   
-  return (
-    <>
-      <h1 className="ms-2">Toilet detail</h1>
+  if(city==="Gent"){
+    return(
+      <>
+      <h1 className="ms-2">Toilet detail Gent</h1>
       <p className="ms-4">{toilet.status}</p>
       <p className="ms-4">Adres: {toilet.adres}</p>
       <p className="ms-4">Beschrijving: {toilet.beschrijving}</p>
@@ -35,7 +41,22 @@ function ToiletDetail()
         <button className="btn btn-danger ms-4">Meld een probleem</button>
       </Link>
     </>
-  );
+    );
+  }
+  if(city==="Brussel"){
+    return(
+    <>
+    <h1 className="ms-2">Toilet detail Brussel</h1>
+    <p className="ms-4">Adres: {toilet.adrvoisnl}</p>
+    <p className="ms-4">Wijk: {toilet.z_pcdd_nl}</p>
+    <p className="ms-4">Openingsuren: {toilet.heureouv}</p>
+    <p className="ms-4">Type: {toilet.typtoil}</p>
+    <Link to={`/toilet/error/${id}`}>
+        <button className="btn btn-danger ms-4">Meld een probleem</button>
+      </Link>
+    </>
+    );
+  }
 }
 
 export default memo(ToiletDetail);

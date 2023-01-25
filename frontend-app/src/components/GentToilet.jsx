@@ -10,7 +10,7 @@ function GentToilet({
       <Popup>
         <p>{fields.adres}</p>
         <p>{fields.status}</p>
-        <Link to={`toilet/${recordid}`}>
+        <Link to={`toilet/Gent/${recordid}`}>
           <button className="btn btn-success">Info</button>
         </Link>
       </Popup>

@@ -10,7 +10,7 @@ function BrusselToilet({
       <Popup>
         <p>{fields.adrvoisnl}</p>
         <p>{fields.gratuite}</p>
-        <Link to={`toilet/${recordid}`}>
+        <Link to={`toilet/Brussel/${recordid}`}>
           <button className="btn btn-success">Info</button>
         </Link>
       </Popup>
