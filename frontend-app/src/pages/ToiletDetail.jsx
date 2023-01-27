@@ -37,7 +37,7 @@ function ToiletDetail()
       <p data-cy="urinoirs" className="ms-4">Urinoirs: {toilet.urinoirs === 0 || toilet.urinoirs == null? "Geen aanwezig":toilet.urinoirs}</p>
       <p className="ms-4">Toiletten: {toilet.toiletten === 0 || toilet.toiletten === null? "Geen aanwezig":toilet.toiletten}</p>
       <p data-cy="luiertafels" className="ms-4">Luiertafels: {toilet.luiertafels === 0 || toilet.luiertafels == null? "Geen aanwezig":toilet.luiertafels}</p>
-      <Link to={`/toilet/error/${id}`}>
+      <Link to={`/toilet/error/Gent/${id}`}>
         <button className="btn btn-danger ms-4">Meld een probleem</button>
       </Link>
     </>
@@ -51,7 +51,7 @@ function ToiletDetail()
     <p className="ms-4">Wijk: {toilet.z_pcdd_nl}</p>
     <p className="ms-4">Openingsuren: {toilet.heureouv}</p>
     <p className="ms-4">Type: {toilet.typtoil}</p>
-    <Link to={`/toilet/error/${id}`}>
+    <Link to={`/toilet/error/Brussel/${id}`}>
         <button className="btn btn-danger ms-4">Meld een probleem</button>
       </Link>
     </>

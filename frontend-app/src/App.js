@@ -17,7 +17,7 @@ function App() {
       <Route index element={<Map/>}/>
       <Route path='about' element={<About/>}/>
       <Route path="/toilet/:city/:id" element={<ToiletDetail/>}></Route>
-      <Route path="/toilet/error/:id" element={<ToiletForm/>}></Route>
+      <Route path="/toilet/error/:city/:id" element={<ToiletForm/>}></Route>
       <Route path="/admin" element={
         <RequireAuth>
           <AdminPage/>

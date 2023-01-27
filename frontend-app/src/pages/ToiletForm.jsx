@@ -2,6 +2,10 @@ import {useForm, FormProvider, useFormContext} from 'react-hook-form';
 import {memo, useState} from 'react';
 import { useNavigate } from 'react-router';
 import * as firebase from '../api/firebase';
+import * as GentApi from '../api/gentdata';
+import * as BrusselApi from '../api/brusseldata';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
 
 const validationRules = {
   toilet: {
@@ -52,12 +56,37 @@ function LabelInput({
 
 function ToiletForm(){
   const [error,  setError] = useState(null);
+  const [complaint, setComplaint] = useState(null);
   const{
     register,
     handleSubmit,
     formState: {errors, isSubmitting}
   } = useForm();
+  const {city,id} = useParams();
+  var data = null;
   const navigate = useNavigate();
+  useEffect(()=> {
+    const fetchToiletComplaint = async()=> {
+    try{
+      if(city==="Gent"){
+        data = await GentApi.getById(id);
+        setComplaint(
+          data[0].fields.adres
+      )
+      }
+      if(city === "Brussel"){
+        data = await BrusselApi.getById(id);
+        setComplaint(
+          data[0].fields.adrvoisnl
+        )
+      }
+    }catch(e)
+    {
+      console.error(e);
+    }
+    console.log(complaint);
+  }; fetchToiletComplaint();
+  },[])
   const onSubmit = async(data) => 
   {
     const {toilet,email,complaint} = data;
