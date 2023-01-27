@@ -56,37 +56,31 @@ function LabelInput({
 
 function ToiletForm(){
   const [error,  setError] = useState(null);
-  const [complaint, setComplaint] = useState(null);
   const{
     register,
     handleSubmit,
+    setValue,
     formState: {errors, isSubmitting}
   } = useForm();
   const {city,id} = useParams();
-  var data = null;
   const navigate = useNavigate();
   useEffect(()=> {
     const fetchToiletComplaint = async()=> {
     try{
       if(city==="Gent"){
-        data = await GentApi.getById(id);
-        setComplaint(
-          data[0].fields.adres
-      )
+        var dataGent = await GentApi.getById(id);
+        setValue("toilet","Gent " + dataGent[0].fields.adres);
       }
       if(city === "Brussel"){
-        data = await BrusselApi.getById(id);
-        setComplaint(
-          data[0].fields.adrvoisnl
-        )
+        var dataBrussel = await BrusselApi.getById(id);
+        setValue("toilet","Brussel " + dataBrussel[0].fields.adrvoisnl);
       }
     }catch(e)
     {
       console.error(e);
     }
-    console.log(complaint);
   }; fetchToiletComplaint();
-  },[])
+  },[city,id,setValue])
   const onSubmit = async(data) => 
   {
     const {toilet,email,complaint} = data;
