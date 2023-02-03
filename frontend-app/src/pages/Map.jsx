@@ -1,10 +1,17 @@
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
-import { Marker, Popup, useMapEvents } from "react-leaflet"
+import { Marker, Popup, useMapEvents} from "react-leaflet"
+// import L from "leaflet"
 import { useState } from "react"
 import GentData from "../components/GentDataParser"
 
 export default function Map(){
+  // TODO: figure out how custom icons work
+  // var locationMarker = L.Icon.extend({
+  //   options: {
+  //     iconUrl: require('../images/green-man-toilet-symbol-th.png')
+  //   }
+  // })
   function LocationMarker() {
     const [position, setPosition] = useState(null)
     const map = useMapEvents({
@@ -18,7 +25,7 @@ export default function Map(){
     })
   
     return position === null ? null : (
-      <Marker position={position}>
+      <Marker position={position} /**icon = {locationMarker}**/>
         <Popup>You are here</Popup>
       </Marker>
     )
@@ -36,7 +43,7 @@ return <div>
     </Popup>
   </Marker>
   <GentData/>
-  <LocationMarker/>
+  <LocationMarker id="location"/>
 </MapContainer>
 </div>
 }

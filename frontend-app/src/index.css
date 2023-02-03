@@ -4,10 +4,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  background-color: #f5f5f5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#map
+{
+  border-radius: 2%;
+}
+
+.location img{
+  filter: hue-rotate(120deg);
 }
