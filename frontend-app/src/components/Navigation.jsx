@@ -19,7 +19,7 @@ export default function Navigation()
               <Link to="/" className="nav-link">Kaart</Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className="nav-link" data-cy="about">Over</Link>
+              <Link to="/about" className="nav-link" data-cy="about">FAQ</Link>
             </li>
             {isAuthenticated? <li className='nav-item'>
               <Link to="/admin" className='nav-link'>Admin</Link>
