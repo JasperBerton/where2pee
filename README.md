@@ -1,42 +1,16 @@
-# Examenopdracht Front-end Web Development
+# Where2Pee
 
-- Student: Jasper Berton
-- Studentennummer: 202074759
-- E-mailadres: jasper.berton@student.hogent.be
+The aim of this project is to collect and display all available open source data of toilets around Belgium and display these all in one place with ease of use.
 
-## Vereisten
+This project was made years ago as a student but the aim is to strip it back to the bare mininum and get it up and running again because hey, i kinda liked this one.
 
-Ik verwacht dat volgende software reeds geïnstalleerd is:
+Link where you can find the live project:
+[Not currently online, my apologies]
 
-- [NodeJS](https://nodejs.org)
-- [Yarn](https://yarnpkg.com)
-- [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
-- ...
+## Current Roadmap
 
-
-
-## Opstarten
-
-.env bestand toevoegen met volgende informatie:
-REACT_APP_AUTH0_DOMAIN="dev-rvdcsc46oy0hlxea.eu.auth0.com"
-REACT_APP_AUTH0_CLIENT="VqaoP98wQ3Gxd3x3i8EmhFslAoW6bXS1"
-REACT_APP_FIREBASE_API_KEY="AIzaSyC3Uq-sCHvkfVPWiMDBNgHddtCUb7VLCs4"
-REACT_APP_FIREBASE_AUTH_DOMAIN="complaintsw2p.firebaseapp.com"
-REACT_APP_FIREBASE_DATABASE_URL="https://complaintsw2p-default-rtdb.europe-west1.firebasedatabase.app"
-REACT_APP_FIREBASE_PROJECTID="complaintsw2p"
-REACT_APP_FIREBASE_STORAGEBUCKET="complaintsw2p.appspot.com"
-REACT_APP_FIREBASE_MESSAGESENDERID="287022381092"
-REACT_APP_FIREBASE_APPID="1:287022381092:web:f7c34b8b9283512e5c00b1"
-REACT_APP_FIREBASE_MEASUREMENTID="G-6ZGHG2SB3Y"
-
-daarna yarn install en yarn start
-
-Inloggen is mogelijk met volgende inloggegevens:
-
-email: jasperberton1@telenet.be
-wachtwoord: Admin-123
-
-
-## Testen
-
-npx cypress open en daar zijn de testen dan te zien onder e2e testen.
+- Remove unneeded parts
+- Update api endpoints
+- Implement caching to ease load on public API's
+- Freshen up CSS
+- Show the end user a route to his pee point.
