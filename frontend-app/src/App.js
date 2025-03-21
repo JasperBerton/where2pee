@@ -6,8 +6,6 @@ import {NotFound} from './pages/NotFound'
 import  ToiletDetail from './pages/ToiletDetail';
 import ToiletForm from './pages/ToiletForm';
 import Navigation from './components/Navigation';
-import RequireAuth from './components/RequireAuth';
-import AdminPage from './pages/AdminPage';
 
 function App() {
   return (
@@ -18,11 +16,6 @@ function App() {
       <Route path='about' element={<About/>}/>
       <Route path="/toilet/:city/:id" element={<ToiletDetail/>}></Route>
       <Route path="/toilet/error/:city/:id" element={<ToiletForm/>}></Route>
-      <Route path="/admin" element={
-        <RequireAuth>
-          <AdminPage/>
-        </RequireAuth>
-      }/>
       <Route path="*" element={<NotFound/>}/>
     </Routes>
     </>

@@ -1,10 +1,7 @@
 import {Link} from 'react-router-dom'
-import AuthenticationButton from './AuthenticationButton';
-import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Navigation()
 {
-  const {isAuthenticated} = useAuth0();
   return(
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
       <div className="container-fluid">
@@ -21,12 +18,6 @@ export default function Navigation()
             <li className="nav-item">
               <Link to="/about" className="nav-link" data-cy="about">FAQ</Link>
             </li>
-            {isAuthenticated? <li className='nav-item'>
-              <Link to="/admin" className='nav-link'>Admin</Link>
-            </li>: null}
-          </ul>
-          <ul>
-              <AuthenticationButton className='navbar-right btn-nav'/>
           </ul>
         </div>
       </div>

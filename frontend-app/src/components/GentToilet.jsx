@@ -1,18 +1,15 @@
 import { Marker, Popup } from "react-leaflet";
 import { memo } from "react";
-import { Link } from "react-router-dom";
 
 function GentToilet({
-  fields, recordid
+  agent, breedtegraad, lengtegraad, adres, status
 }){
+  console.log(agent)
   return(
-    <Marker position={fields.geopoint}>
+    <Marker position={[breedtegraad, lengtegraad]}>
       <Popup>
-        <p>{fields.adres}</p>
-        <p>{fields.status}</p>
-        <Link to={`toilet/Gent/${recordid}`}>
-          <button className="btn btn-success">Info</button>
-        </Link>
+        <p>{adres}</p>
+        <p>{status}</p>
       </Popup>
     </Marker>
   )
