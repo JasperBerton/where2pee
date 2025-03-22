@@ -2,9 +2,11 @@ import { Marker, Popup } from "react-leaflet";
 import { memo } from "react";
 
 function GentToilet({
-  agent, breedtegraad, lengtegraad, adres, status
+  breedtegraad, lengtegraad, adres, status
 }){
-  console.log(agent)
+  if (status === "Gesloten permanent") {
+    return null;
+  }
   return(
     <Marker position={[breedtegraad, lengtegraad]}>
       <Popup>

@@ -1,18 +1,14 @@
 import { Marker, Popup } from "react-leaflet";
 import { memo } from "react";
-import { Link } from "react-router-dom";
 
 function BrusselToilet({
-  fields,recordid
+  location, geo_point_2d, openinghours
 }){
   return(
-    <Marker position={fields.wgs84_lalo}>
+    <Marker position={[geo_point_2d.lat, geo_point_2d.lon]}>
       <Popup>
-        <p>{fields.adrvoisnl}</p>
-        <p>{fields.gratuite}</p>
-        <Link to={`toilet/Brussel/${recordid}`}>
-          <button className="btn btn-success">Info</button>
-        </Link>
+        <p>{location}</p>
+        <p>Open gedurende: {openinghours}</p>
       </Popup>
     </Marker>
   )

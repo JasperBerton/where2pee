@@ -4,9 +4,11 @@ const baseUrl = 'https://data.stad.gent/api/explore/v2.1/catalog/datasets/publie
 
 export const getAll = async()=>{
   const response = await axios.get(baseUrl);
-  console.log(response);
-  console.log(response.data.results);
-  return response.data.results;
+  const part2 = await axios.get(`${baseUrl}&offset=100`);
+  const part3 = await axios.get(`${baseUrl}&offset=200`);
+  console.log(part2.data.results);
+  const total = [...response.data.results, ...part2.data.results, ...part3.data.results];
+  return total;
 }
 
 export const getById = async(id)=>{

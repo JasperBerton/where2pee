@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const baseUrl = "https://opendata.brussel.be/api/records/1.0/search/?dataset=toiletten&q=&rows=75";
+const baseUrl = "https://opendata.brussel.be/api/explore/v2.1/catalog/datasets/toilettes_publiques_vbx/records?limit=100";
 
 export const getAll = async()=>{
-  //const response = await axios.get(baseUrl);
-  //return response.data;
+  const response = await axios.get(baseUrl);
+  return response.data.results;
 }
 
 export const getById = async(id)=>{

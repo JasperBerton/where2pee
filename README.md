@@ -9,8 +9,8 @@ Link where you can find the live project:
 
 ## Current Roadmap
 
-- Remove unneeded parts
-- Update api endpoints
+- Remove unneeded parts (DONE)
+- Update api endpoints (GENT, BRUSSEL Done)
 - Implement caching to ease load on public API's
 - Freshen up CSS
 - Show the end user a route to his pee point.

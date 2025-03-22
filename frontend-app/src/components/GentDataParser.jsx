@@ -1,9 +1,12 @@
 import {useState,useEffect} from 'react';
-import * as GentApi from '../api/gentdata'
-import GentToilet from './GentToilet'
+import * as GentApi from '../api/gentdata';
+import GentToilet from './GentToilet';
+import * as BrusselApi from '../api/brusseldata';
+import BrusselToilet from './BrusselToilet';
 
 export default function GentData(){
   const [gent, setGent] = useState(null);
+  const [brussel, setBrussel] = useState(null);
   const[error, setError] = useState(null);
 
   useEffect(() =>{
@@ -13,6 +16,8 @@ export default function GentData(){
         const GentData = await GentApi.getAll();
         console.log("data here " + JSON.stringify(GentData, null, 2));
         setGent(GentData);
+        const BruxData = await BrusselApi.getAll();
+        setBrussel(BruxData);
       } catch(err){
         setError(err.message || "Failed to load Gent data");
       }
@@ -28,7 +33,7 @@ export default function GentData(){
     printGent();
   }, [gent]);
   
-  if (gent === null) {
+  if (gent === null || brussel === null) {
     return <div>Loading Data...</div>
   }
   
@@ -38,6 +43,9 @@ export default function GentData(){
     <>
       {gent.map(g => (
           <GentToilet {...g}></GentToilet>
+      ))}
+      {brussel.map(b => (
+        <BrusselToilet {...b}></BrusselToilet>
       ))}
     </>
   )
