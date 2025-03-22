@@ -1,6 +1,6 @@
 export const NotFound = () => 
 (
   <div>
-    <h1>Helemaal niks te zien hier</h1>
+    <h1>404 Toilet not found.</h1>
   </div>
 )

@@ -15,9 +15,6 @@ export default function Navigation()
             <li className="nav-item">
               <Link to="/" className="nav-link">Kaart</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/about" className="nav-link" data-cy="about">FAQ</Link>
-            </li>
           </ul>
         </div>
       </div>
